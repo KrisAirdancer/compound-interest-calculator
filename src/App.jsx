@@ -4,7 +4,7 @@ function App()
 {
   return (
     <>
-      <div className='container'>
+      <div className='container' style={{ maxWidth: 768 }}>
         <div className="row">
 
           <div className="col text-center">
