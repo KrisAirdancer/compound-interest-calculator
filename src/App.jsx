@@ -5,6 +5,7 @@ function App()
   return (
     <>
       <div className='container' style={{ maxWidth: 768 }}>
+        {/* SITE HEADER */}
         <div className="row">
 
           <div className="col text-center">
@@ -15,6 +16,7 @@ function App()
         </div>
 
         <div className="card p-2 bg-secondary bg-gradient">
+          {/* INPUT FIELDS */}
           <div className="row">
 
             <div className="col">
@@ -42,7 +44,12 @@ function App()
 
             </div>
 
+          </div>
+
+          {/* TABLE */}
+          <div className="row mt-2">
             <div className="col">
+              {/* <div className="box"></div> */}
               <table className="table">
                 <thead>
                   <tr>
@@ -127,8 +134,8 @@ function App()
                 </tbody>
               </table>
             </div>
-
           </div>
+
         </div>
 
       </div>
