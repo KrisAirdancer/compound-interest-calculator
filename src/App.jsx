@@ -13,31 +13,42 @@ function App()
           </div>
 
         </div>
-        <div className="row d-flex justify-content-center rounded-4 bg-dark p-3" id='calcBox'>
-          <div className="col p-0" style={{ maxWidth: 768 }}>
-            <label htmlFor="principal" className="form-label custom-form-label">Initial Contribution</label>
-            <input type="text" className="form-control" id='principal'/>
-            
-            <label htmlFor="monthlyContribution" className="form-label custom-form-label">Monthly Contribution</label>
-            <input type="text" className="form-control" id='monthlyContribution' />
 
-            <label htmlFor="yearsToGrow" className="form-label custom-form-label">Years to Grow</label>
-            <input type="text" className="form-control" id='yearsToGrow' />
+        <div className="card p-2 bg-secondary bg-gradient">
+          <div className="row">
 
-            <label htmlFor="rateOfReturn" className="form-label custom-form-label">Estimated Rate of Return</label>
-            <input type="text" className="form-control" id='rateOfReturn' />
+            <div className="col">
+              <label htmlFor="initialInvestment" className="form-label custom-form-label">Initial Investment</label>
+              <div className="input-group">
+                <div className="input-group-text">$</div>
+                <input type="text" className="form-control custom-form-input" id='initialInvestment' value={10000} />
+              </div>
 
-            <label htmlFor="compoundingFreq" className="form-label custom-form-label">Compounding Frequency</label>
-            {/* <input type="text" className="form-control" id='compoundingFreq' /> */}
-            <select name="" id="" className="form-select">
-              <option value="monthly">Monthly</option>
-              <option value="annually">Annually</option>
-            </select>
-          </div>
-          <div className="col  p-0">
-            <div className="box"></div>
+              <label htmlFor="annualAddition" className="form-label custom-form-label">Annual Addition</label>
+              <div className="input-group">
+                <div className="input-group-text">$</div>
+                <input type="text" className="form-control custom-form-input" id='annualAddition' value={1200} />
+              </div>
+
+              <label htmlFor="yearsToGrow" className="form-label custom-form-label">Years to Grow</label>
+                <input type="text" className="form-control custom-form-input" id='yearsToGrow' value={10} />
+
+
+              <label htmlFor="interestRate" className="form-label custom-form-label">Interest Rate</label>
+              <div className="input-group">
+                <input type="text" className="form-control custom-form-input" id='interestRate' value={5} />
+                <div className="input-group-text">%</div>
+              </div>
+
+            </div>
+
+            <div className="col">
+              <div className="box">TODO: Add a table here.</div>
+            </div>
+
           </div>
         </div>
+
       </div>
     </>
   )
