@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+body {
+  /* font-family: 'Roboto', sans-serif !important; */
+  font-family: 'Noto Sans', sans-serif !important;
+}
+
+.box {
+  background-color: aquamarine;
+  min-height: 50px;
+  border: solid black 2px;
+}
+
+#siteIcon {
+  font-size: 50pt;
+  color: yellowgreen;
+  text-shadow: 3px 3px black;
+}
+
+#siteTitle {
+  color: white;
+  text-shadow: 3px 3px black;
+}
+
+.custom-form-label {
+  font-size: 10pt;
+  margin-bottom: 0px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#calcBox {
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.316);
+}
