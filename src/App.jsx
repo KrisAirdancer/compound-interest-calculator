@@ -15,7 +15,7 @@ function App()
 
         </div>
 
-        <div className="card p-2 bg-secondary bg-gradient">
+        <div className="card p-2 mb-3 bg-secondary custom-shadow">
           {/* INPUT FIELDS */}
           <div className="row">
 
@@ -50,7 +50,7 @@ function App()
           <div className="row mt-2">
             <div className="col">
               {/* <div className="box"></div> */}
-              <table className="table">
+              <table className="table custom-table text-center" id='bootstrap-override'>
                 <thead>
                   <tr>
                     <th>Year</th>
