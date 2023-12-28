@@ -38,7 +38,7 @@ function calculateTableData(params)
             ['numPeriods']: i
         }
         let fv = futureValue(data)
-        let ti = fv - principal - annualInvestment
+        let ti = fv - principal - annualInvestment // We subtract the annualInvestment here b/c it is added at the end of the compounding period, so it shouldn't be counted as interest.
         let ip = principal + (annualInvestment * i)
         let pi = ti - previousTI
         previousTI = fv - principal
