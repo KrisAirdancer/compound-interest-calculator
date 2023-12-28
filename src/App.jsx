@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Header from './Header'
 
 let defaultInvestmentParams = {
   initialInvestment: 10000,
@@ -51,12 +52,7 @@ function App()
       <div className='container' style={{ maxWidth: 768 }}>
         {/* SITE HEADER */}
         <div className="row">
-
-          <div className="col text-center">
-            <i className="bi bi-coin" id='siteIcon'></i>
-            <h1 className='text-center fs-1' id='siteTitle'>Compound Interest Calculator</h1>
-          </div>
-
+          <Header />
         </div>
 
         <div className="card p-2 mb-3 bg-secondary custom-shadow">
