@@ -55,9 +55,6 @@ function App()
         <Header />
         <CalculatorInput />
         <Table />
-
-        
-
       </div>
     </>
   )
