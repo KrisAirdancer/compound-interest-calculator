@@ -28,10 +28,11 @@ function App()
   function deriveFutureValue()
   {
     let newValue = investmentParams.initialInvestment
+    let contribution = investmentParams.annualAddition
 
     for (let i = 0; i < investmentParams.yearsToGrow; i++)
     {
-      newValue = deriveFutureValueForSinglePeriod(newValue, investmentParams.interestRate)
+      newValue = deriveFutureValueForSinglePeriod(newValue, investmentParams.interestRate) + contribution
     }
 
     return Math.round(newValue)
@@ -86,7 +87,10 @@ function App()
               </div>
 
               <label htmlFor="futureValue" className="form-label custom-form-label">Future Value</label>
-              <input type="text" className="form-control custom-form-input" id='futureValue' value={futureValue} readOnly />
+              <div className="input-group">
+                <div className="input-group-text">$</div>
+                <input type="text" className="form-control custom-form-input" id='futureValue' value={futureValue} readOnly />
+              </div>
 
             </div>
 
