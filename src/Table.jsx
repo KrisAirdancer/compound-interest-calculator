@@ -2,10 +2,10 @@ import { futureValue, calculateTableData } from './utils/calc'
 
 export default function Table({ userInput })
 {
-    console.log(userInput)
+    // console.log(userInput)
     const tableData = calculateTableData(userInput)
     // let tableData = []
-    console.log(tableData)
+    // console.log(tableData)
 
     return (
         <div className="card p-2 mb-3 bg-secondary custom-shadow">

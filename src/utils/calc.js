@@ -4,12 +4,11 @@ function futureValue({
     rate,
     numPeriods
 }) {
-    // console.log("AT: futureValue()")
-    // console.log({principal: principal, annualInvestment: annualInvestment, rate: rate, numPeriods: numPeriods})
     let newValue = principal
     
     for (let i = 0; i < numPeriods; i++)
     {
+        // Note: Contributions are made at the end of the compounding period.
         newValue = basicFutureValue(newValue, rate, 1, 1) + annualInvestment
     }
 
@@ -27,26 +26,29 @@ function basicFutureValue(p, r, n, t)
 
 function calculateTableData(params)
 {
-    // TODO: Implement logic to correctly calculate the return values.
-    // console.log('AT: calculateTableData()')
-    // console.log({principal: principal, annualInvestment: annualInvestment, rate: rate, numPeriods: numPeriods})
-
     const {principal, annualInvestment, rate, numPeriods } = params
 
     let tableData = []
+    let previousTI = 0
 
     for (let i = 1; i <= numPeriods; i++)
     {
+        let data = {
+            ...params,
+            ['numPeriods']: i
+        }
+        let fv = futureValue(data)
+        let ti = fv - principal - annualInvestment
+        let ip = principal + (annualInvestment * i)
+        let pi = ti - previousTI
+        previousTI = fv - principal
+
         tableData.push({
             year: i,
-            futureValue: futureValue({
-                ...params,
-                [numPeriods]: i
-            }),
-            // futureValue: -1,
-            periodInterest: -1,
-            totalInterest: -1,
-            investedPrincipal: -1
+            futureValue: fv,
+            periodInterest: pi,
+            totalInterest: ti,
+            investedPrincipal: ip
         })
     }
     return tableData
