@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Header from './Header'
-import UserInput from './CalculatorInput'
+import UserInput from './UserInput'
 import Table from './Table'
 
 function App()
@@ -28,7 +28,7 @@ function App()
       <div className='container' style={{ maxWidth: 768 }}>
         <Header />
         <UserInput
-          onChange={handleChange}
+          handleChange={handleChange}
           userInput={userInput}
         />
         <Table
