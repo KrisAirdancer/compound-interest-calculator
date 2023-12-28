@@ -1,5 +1,7 @@
-export default function Table()
+export default function Table({ userInput })
 {
+    console.log(userInput)
+
     return (
         <div className="card p-2 mb-3 bg-secondary custom-shadow">
 
