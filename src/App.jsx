@@ -50,7 +50,6 @@ function App()
   return (
     <>
       <div className='container' style={{ maxWidth: 768 }}>
-        {/* SITE HEADER */}
         <div className="row">
           <Header />
         </div>
