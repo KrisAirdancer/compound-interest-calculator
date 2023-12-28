@@ -4,6 +4,8 @@ function futureValue({
     rate,
     numPeriods
 }) {
+    // console.log("AT: futureValue()")
+    // console.log({principal: principal, annualInvestment: annualInvestment, rate: rate, numPeriods: numPeriods})
     let newValue = principal
     
     for (let i = 0; i < numPeriods; i++)
@@ -23,4 +25,34 @@ function basicFutureValue(p, r, n, t)
     return p * ((1 + ((r / 100) / n)) ** (n * t))
 }
 
-export default futureValue
+function calculateTableData(params)
+{
+    // TODO: Implement logic to correctly calculate the return values.
+    // console.log('AT: calculateTableData()')
+    // console.log({principal: principal, annualInvestment: annualInvestment, rate: rate, numPeriods: numPeriods})
+
+    const {principal, annualInvestment, rate, numPeriods } = params
+
+    let tableData = []
+
+    for (let i = 1; i <= numPeriods; i++)
+    {
+        tableData.push({
+            year: i,
+            futureValue: futureValue({
+                ...params,
+                [numPeriods]: i
+            }),
+            // futureValue: -1,
+            periodInterest: -1,
+            totalInterest: -1,
+            investedPrincipal: -1
+        })
+    }
+    return tableData
+}
+
+export {
+    futureValue,
+    calculateTableData
+}
