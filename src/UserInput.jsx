@@ -1,3 +1,5 @@
+import { formatAsCurrency } from "./utils/calc"
+
 export default function UserInput({ handleChange, handleSubmit, userInput })
 {
     return (
@@ -13,10 +15,11 @@ export default function UserInput({ handleChange, handleSubmit, userInput })
                         <div className="input-group">
                             <div className="input-group-text">$</div>
                             <input
-                                type="decimal"
+                                type="text"
                                 className="form-control custom-form-input"
                                 id='principal'
                                 onChange={(event) => { handleChange('principal', event.target.value) }}
+                                // value={formatAsCurrency(userInput.principal)}
                                 value={userInput.principal}
                                 required
                             />

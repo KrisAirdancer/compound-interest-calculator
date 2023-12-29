@@ -47,8 +47,6 @@ function App()
     if (!validateIntegerInput(newNumPeriods)) { newNumPeriods = 1 }
     if (!validateDecimalInput(newRate)) { newRate = 0.0 }
 
-    console.log(newRate)
-
     setTableData(() => {
       return {
         ['principal']: newPrincipal,
@@ -60,8 +58,8 @@ function App()
 
     setUserInput(() => {
       return {
-        ['principal']: newPrincipal,
-        ['annualInvestment']: newAnnualInvestment,
+        ['principal']: formatAsCurrency(newPrincipal),
+        ['annualInvestment']: formatAsCurrency(newAnnualInvestment),
         ['rate']: newRate,
         ['numPeriods']: newNumPeriods
       }
