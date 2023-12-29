@@ -1,4 +1,5 @@
 import { futureValue, calculateTableData, toCurrency } from './utils/calc'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function Table({ userInput })
 {
@@ -16,7 +17,7 @@ export default function Table({ userInput })
                 <div className="col">
                     <table className="table custom-table text-center" id='bootstrap-override'>
                         <thead>
-                            <tr>
+                            <tr key={uuidv4()}>
                                 <th>Year</th>
                                 <th>Future Value</th>
                                 <th>Interest (Year)</th>
@@ -28,7 +29,7 @@ export default function Table({ userInput })
                             {
                                 tableData.map(line => {
                                     return (
-                                        <tr>
+                                        <tr key={uuidv4()}>
                                             <td>{line.year}</td>
                                             <td>{toCurrency(line.futureValue)}</td>
                                             <td>{toCurrency(line.periodInterest)}</td>
