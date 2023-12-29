@@ -2,9 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 body {
-  /* font-family: 'Roboto', sans-serif !important; */
   font-family: 'Noto Sans', sans-serif !important;
-  /* color: whitesmoke; */
 }
 
 #siteIcon {
