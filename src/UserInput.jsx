@@ -5,7 +5,7 @@ export default function UserInput({ handleChange, userInput })
 
             <div className="row">
 
-                <div className="col">
+                <div className="col" id="bootstrap-override">
 
                     <label htmlFor="principal" className="form-label custom-form-label">Initial Investment</label>
                     <div className="input-group">

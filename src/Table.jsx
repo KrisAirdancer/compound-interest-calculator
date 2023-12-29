@@ -5,19 +5,7 @@ export default function Table({ userInput })
     const tableData = calculateTableData(userInput)
 
     return (
-        <div className="card p-2 mb-3 bg-secondary custom-shadow">
-
-            {/* <label htmlFor="futureValue" className="form-label custom-form-label">Future Value</label>
-            <div className="input-group">
-                <div className="input-group-text">$</div>
-                <input
-                    type="number"
-                    className="form-control custom-form-input"
-                    id='futureValue'
-                    value={futureValue(userInput)}
-                    readOnly
-                    />
-            </div> */}
+        <div className="card p-2 mb-3 bg-secondary custom-shadow container-fluid" id='table'>
 
             <div className='border rounded-2 p-1 custom-shadow-2'>
                 <h1 className='text-center fs-5 custom-bold' id='siteTitle'>Future Value</h1>
