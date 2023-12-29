@@ -51,6 +51,7 @@ export default function UserInput({ handleChange, userInput })
                             id='rate'
                             onChange={(event) => { handleChange('rate', event.target.value) }}
                             value={userInput.rate}
+                            step={0.01}
                             required
                         />
                         <div className="input-group-text">%</div>

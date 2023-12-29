@@ -4,6 +4,7 @@
 body {
   /* font-family: 'Roboto', sans-serif !important; */
   font-family: 'Noto Sans', sans-serif !important;
+  /* color: whitesmoke; */
 }
 
 #siteIcon {
@@ -40,4 +41,16 @@ body {
 
 .custom-shadow {
   box-shadow: 0.15rem 0.15rem yellowgreen
+}
+
+.custom-shadow-2 {
+  box-shadow: 0.15rem 0.15rem yellowgreen
+}
+
+.custom-bold {
+  font-weight: bold;
+}
+
+.future-value {
+  color: whitesmoke;
 }

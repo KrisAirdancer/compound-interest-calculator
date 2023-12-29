@@ -7,7 +7,7 @@ export default function Table({ userInput })
     return (
         <div className="card p-2 mb-3 bg-secondary custom-shadow">
 
-            <label htmlFor="futureValue" className="form-label custom-form-label">Future Value</label>
+            {/* <label htmlFor="futureValue" className="form-label custom-form-label">Future Value</label>
             <div className="input-group">
                 <div className="input-group-text">$</div>
                 <input
@@ -17,6 +17,11 @@ export default function Table({ userInput })
                     value={futureValue(userInput)}
                     readOnly
                     />
+            </div> */}
+
+            <div className='border rounded-2 p-1 custom-shadow-2'>
+                <h1 className='text-center fs-5 custom-bold' id='siteTitle'>Future Value</h1>
+                <h2 className='fs-5 mb-0 text-center future-value'>{toCurrency(futureValue(userInput))}</h2>
             </div>
 
             <div className="row mt-2">

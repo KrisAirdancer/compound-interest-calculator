@@ -9,7 +9,7 @@ function App()
   const [ userInput, setUserInput ] = useState({
     principal: 15000,
     annualInvestment: 900,
-    rate: 5,
+    rate: 5.5,
     numPeriods: 10
   })
 
