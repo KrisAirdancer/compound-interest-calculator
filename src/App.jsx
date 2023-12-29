@@ -8,7 +8,7 @@ import { toDecimal, toInteger, formatAsCurrency, validateDecimalInput, validateI
 const DEFAULT_INVESTMENT = {
   principal: 10000,
   annualInvestment: 1200,
-  rate: 5.5,
+  rate: 5.50,
   numPeriods: 10
 }
 
@@ -17,8 +17,8 @@ function App()
   const [ userInput, setUserInput ] = useState({
                                                 principal: formatAsCurrency(DEFAULT_INVESTMENT.principal),
                                                 annualInvestment: formatAsCurrency(DEFAULT_INVESTMENT.annualInvestment),
-                                                rate: DEFAULT_INVESTMENT.rate,
-                                                numPeriods: DEFAULT_INVESTMENT.numPeriods
+                                                numPeriods: DEFAULT_INVESTMENT.numPeriods,
+                                                rate: toDecimal(DEFAULT_INVESTMENT.rate).toFixed(2)
                                               })
 
   const [ tableData, setTableData ] = useState(DEFAULT_INVESTMENT)
