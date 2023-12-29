@@ -54,7 +54,24 @@ function calculateTableData(params)
     return tableData
 }
 
+function toCurrency(number)
+{
+    number = Math.round(number)
+
+    const options = {
+        style: 'currency',
+        currency: 'USD',
+    }
+    const formatter = new Intl.NumberFormat('en-US', options)
+
+    number = formatter.format(number)
+    number = number.slice(0, number.indexOf("."))
+
+    return number
+}
+
 export {
     futureValue,
-    calculateTableData
+    calculateTableData,
+    toCurrency
 }

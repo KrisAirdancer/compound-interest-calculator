@@ -1,11 +1,8 @@
-import { futureValue, calculateTableData } from './utils/calc'
+import { futureValue, calculateTableData, toCurrency } from './utils/calc'
 
 export default function Table({ userInput })
 {
-    // console.log(userInput)
     const tableData = calculateTableData(userInput)
-    // let tableData = []
-    // console.log(tableData)
 
     return (
         <div className="card p-2 mb-3 bg-secondary custom-shadow">
@@ -40,21 +37,14 @@ export default function Table({ userInput })
                                     return (
                                         <tr>
                                             <td>{line.year}</td>
-                                            <td>{line.futureValue}</td>
-                                            <td>{line.periodInterest}</td>
-                                            <td>{line.totalInterest}</td>
-                                            <td>{line.investedPrincipal}</td>
+                                            <td>{toCurrency(line.futureValue)}</td>
+                                            <td>{toCurrency(line.periodInterest)}</td>
+                                            <td>{toCurrency(line.totalInterest)}</td>
+                                            <td>{toCurrency(line.investedPrincipal)}</td>
                                         </tr>
                                     )
                                 })
                             }
-                            {/* <tr>
-                                <td>1</td>
-                                <td>$10,000</td>
-                                <td>$0</td>
-                                <td>$0</td>
-                                <td>$10,000</td>
-                            </tr> */}
                         </tbody>
                     </table>
                 </div>
