@@ -22,7 +22,7 @@ export default function UserInput({ handleChange, handleSubmit, userInput })
                             />
                         </div>
 
-                        <label htmlFor="annualInvestment" className="form-label custom-form-label">Annual Addition</label>
+                        <label htmlFor="annualInvestment" className="form-label custom-form-label">Annual Investment</label>
                         <div className="input-group">
                             <div className="input-group-text">$</div>
                             <input

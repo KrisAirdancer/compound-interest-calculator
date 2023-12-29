@@ -14,7 +14,12 @@ const DEFAULT_INVESTMENT = {
 
 function App()
 {
-  const [ userInput, setUserInput ] = useState(DEFAULT_INVESTMENT)
+  const [ userInput, setUserInput ] = useState({
+                                                principal: formatAsCurrency(DEFAULT_INVESTMENT.principal),
+                                                annualInvestment: formatAsCurrency(DEFAULT_INVESTMENT.annualInvestment),
+                                                rate: DEFAULT_INVESTMENT.rate,
+                                                numPeriods: DEFAULT_INVESTMENT.numPeriods
+                                              })
 
   const [ tableData, setTableData ] = useState(DEFAULT_INVESTMENT)
 
@@ -37,25 +42,10 @@ function App()
     let newNumPeriods = toInteger(event.target['numPeriods'].value)
     let newRate = toDecimal(event.target['rate'].value)
 
-    if (!validateDollarsInput(newPrincipal))
-    {
-      newPrincipal = 0.0
-    }
-
-    if (!validateDollarsInput(newAnnualInvestment))
-    {
-      newAnnualInvestment = 0.0
-    }
-
-    if (!validateYearsInput(newNumPeriods))
-    {
-      newNumPeriods = 1
-    }
-
-    if (!validateRateInput(newRate))
-    {
-      newRate = 0.0
-    }
+    if (!validateDollarsInput(newPrincipal)) { newPrincipal = 0.0 }
+    if (!validateDollarsInput(newAnnualInvestment)) { newAnnualInvestment = 0.0 }
+    if (!validateYearsInput(newNumPeriods)) { newNumPeriods = 1 }
+    if (!validateRateInput(newRate)) { newRate = 0.0 }
 
     setTableData(() => {
       return {
@@ -68,8 +58,8 @@ function App()
 
     setUserInput(() => {
       return {
-        ['principal']: formatAsCurrency(newPrincipal),
-        ['annualInvestment']: formatAsCurrency(newAnnualInvestment),
+        ['principal']: newPrincipal,
+        ['annualInvestment']: newAnnualInvestment,
         ['rate']: newRate,
         ['numPeriods']: newNumPeriods
       }
