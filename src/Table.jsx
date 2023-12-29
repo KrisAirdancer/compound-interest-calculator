@@ -1,16 +1,14 @@
-import { futureValue, calculateTableData, toCurrency } from './utils/calc'
+import { futureValue, calculateTableData, formatAsCurrency, tableDataToIntegers } from './utils/calc'
 import { v4 as uuidv4 } from 'uuid'
 
-export default function Table({ userInput })
+export default function Table({ tableData })
 {
-    const tableData = calculateTableData(userInput)
-
     return (
         <div className="card p-2 mb-3 bg-secondary custom-shadow container-fluid" id='table'>
 
             <div className='border rounded-2 p-1 custom-shadow-2'>
                 <h1 className='text-center fs-5 custom-bold' id='siteTitle'>Future Value</h1>
-                <h2 className='fs-5 mb-0 text-center future-value'>{toCurrency(futureValue(userInput))}</h2>
+                <h2 className='fs-5 mb-0 text-center future-value'>${formatAsCurrency(futureValue(tableDataToIntegers(tableData)))}</h2>
             </div>
 
             <div className="row mt-2">
@@ -27,14 +25,14 @@ export default function Table({ userInput })
                         </thead>
                         <tbody>
                             {
-                                tableData.map(line => {
+                                calculateTableData(tableData).map(line => {
                                     return (
                                         <tr key={uuidv4()}>
                                             <td>{line.year}</td>
-                                            <td>{toCurrency(line.futureValue)}</td>
-                                            <td>{toCurrency(line.periodInterest)}</td>
-                                            <td>{toCurrency(line.totalInterest)}</td>
-                                            <td>{toCurrency(line.investedPrincipal)}</td>
+                                            <td>${formatAsCurrency(line.futureValue)}</td>
+                                            <td>${formatAsCurrency(line.periodInterest)}</td>
+                                            <td>${formatAsCurrency(line.totalInterest)}</td>
+                                            <td>${formatAsCurrency(line.investedPrincipal)}</td>
                                         </tr>
                                     )
                                 })

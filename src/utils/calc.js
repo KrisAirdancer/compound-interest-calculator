@@ -54,7 +54,7 @@ function calculateTableData(params)
     return tableData
 }
 
-function toCurrency(number)
+function formatAsCurrency(number)
 {
     number = Math.round(number)
 
@@ -65,13 +65,53 @@ function toCurrency(number)
     const formatter = new Intl.NumberFormat('en-US', options)
 
     number = formatter.format(number)
+    number = number.replace("$", "")
     number = number.slice(0, number.indexOf("."))
 
     return number
 }
 
+function toDecimal(number)
+{
+    // if (typeof number !== "string")
+    // {
+    //     number = number.toString()
+    // }
+
+    return Number(number.toString().replace(/[^0-9.-]+/g, ""))
+}
+
+function toInteger(number)
+{
+    // if (typeof number !== "string")
+    // {
+    //     number = number.toString()
+    // }
+    
+    return Math.round(toDecimal(number))
+    // return toDecimal(number)
+}
+
+function tableDataToIntegers({
+    principal,
+    annualInvestment,
+    rate,
+    numPeriods
+})
+{
+    return {
+        principal: toInteger(principal),
+        annualInvestment: toInteger(annualInvestment),
+        rate: toDecimal(rate),
+        numPeriods: toInteger(numPeriods)
+    }
+}
+
 export {
     futureValue,
     calculateTableData,
-    toCurrency
+    formatAsCurrency,
+    toDecimal,
+    toInteger,
+    tableDataToIntegers
 }

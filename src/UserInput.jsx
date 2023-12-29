@@ -1,4 +1,4 @@
-export default function UserInput({ handleChange, userInput })
+export default function UserInput({ handleChange, handleSubmit, userInput })
 {
     return (
         <div className="card p-2 mb-3 bg-secondary custom-shadow">
@@ -7,55 +7,61 @@ export default function UserInput({ handleChange, userInput })
 
                 <div className="col" id="bootstrap-override">
 
-                    <label htmlFor="principal" className="form-label custom-form-label">Initial Investment</label>
-                    <div className="input-group">
-                        <div className="input-group-text">$</div>
+                    <form onSubmit={(event) => { handleSubmit(event) }}>
+
+                        <label htmlFor="principal" className="form-label custom-form-label">Initial Investment</label>
+                        <div className="input-group">
+                            <div className="input-group-text">$</div>
+                            <input
+                                type="text"
+                                className="form-control custom-form-input"
+                                id='principal'
+                                onChange={(event) => { handleChange('principal', event.target.value) }}
+                                value={userInput.principal}
+                                required
+                            />
+                        </div>
+
+                        <label htmlFor="annualInvestment" className="form-label custom-form-label">Annual Addition</label>
+                        <div className="input-group">
+                            <div className="input-group-text">$</div>
+                            <input
+                                type="text"
+                                className="form-control custom-form-input"
+                                id='annualInvestment'
+                                onChange={(event) => { handleChange('annualInvestment', event.target.value) }}
+                                value={userInput.annualInvestment}
+                                required
+                            />
+                        </div>
+
+                        <label htmlFor="numPeriods" className="form-label custom-form-label">Years to Grow</label>
                         <input
-                            type="number"
+                            type="text"
                             className="form-control custom-form-input"
-                            id='principal'
-                            onChange={(event) => { handleChange('principal', event.target.value) }}
-                            value={userInput.principal}
+                            id='numPeriods'
+                            onChange={(event) => { handleChange('numPeriods', event.target.value) }}
+                            value={userInput.numPeriods}
                             required
                         />
-                    </div>
 
-                    <label htmlFor="annualInvestment" className="form-label custom-form-label">Annual Addition</label>
-                    <div className="input-group">
-                        <div className="input-group-text">$</div>
-                        <input
-                            type="number"
-                            className="form-control custom-form-input"
-                            id='annualInvestment'
-                            onChange={(event) => { handleChange('annualInvestment', event.target.value) }}
-                            value={userInput.annualInvestment}
-                            required
-                        />
-                    </div>
+                        <label htmlFor="rate" className="form-label custom-form-label">Interest Rate</label>
+                        <div className="input-group">
+                            <input
+                                type="text"
+                                className="form-control custom-form-input"
+                                id='rate'
+                                onChange={(event) => { handleChange('rate', event.target.value) }}
+                                value={userInput.rate}
+                                step={0.01}
+                                required
+                            />
+                            <div className="input-group-text">%</div>
+                        </div>
 
-                    <label htmlFor="numPeriods" className="form-label custom-form-label">Years to Grow</label>
-                    <input
-                        type="number"
-                        className="form-control custom-form-input"
-                        id='numPeriods'
-                        onChange={(event) => { handleChange('numPeriods', event.target.value) }}
-                        value={userInput.numPeriods}
-                        required
-                    />
+                        <button type="submit" className="btn btn-light mt-2">Calculate</button>
 
-                    <label htmlFor="rate" className="form-label custom-form-label">Interest Rate</label>
-                    <div className="input-group">
-                        <input
-                            type="number"
-                            className="form-control custom-form-input"
-                            id='rate'
-                            onChange={(event) => { handleChange('rate', event.target.value) }}
-                            value={userInput.rate}
-                            step={0.01}
-                            required
-                        />
-                        <div className="input-group-text">%</div>
-                    </div>
+                    </form>
 
                 </div>
             </div>
