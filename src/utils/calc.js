@@ -106,22 +106,7 @@ function tableDataToIntegers({
     }
 }
 
-function validateDollarsInput(number)
-{
-    if (typeof number !== "string")
-    {
-        number = number.toString()
-    }
-
-    if (!toDecimal(number))
-    {
-        return false
-    }
-
-    return true
-}
-
-function validateYearsInput(number)
+function validateIntegerInput(number)
 {
     if (typeof number !== "string")
     {
@@ -136,7 +121,7 @@ function validateYearsInput(number)
     return true
 }
 
-function validateRateInput(number)
+function validateDecimalInput(number)
 {
     if (typeof number !== "string")
     {
@@ -158,7 +143,6 @@ export {
     toDecimal,
     toInteger,
     tableDataToIntegers,
-    validateDollarsInput,
-    validateYearsInput,
-    validateRateInput
+    validateDecimalInput,
+    validateIntegerInput
 }
