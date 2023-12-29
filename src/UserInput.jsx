@@ -13,7 +13,7 @@ export default function UserInput({ handleChange, handleSubmit, userInput })
                         <div className="input-group">
                             <div className="input-group-text">$</div>
                             <input
-                                type="text"
+                                type="decimal"
                                 className="form-control custom-form-input"
                                 id='principal'
                                 onChange={(event) => { handleChange('principal', event.target.value) }}

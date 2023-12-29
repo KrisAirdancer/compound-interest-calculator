@@ -73,23 +73,22 @@ function formatAsCurrency(number)
 
 function toDecimal(number)
 {
-    // if (typeof number !== "string")
-    // {
-    //     number = number.toString()
-    // }
+    if (typeof number !== "string")
+    {
+        number = number.toString()
+    }
 
-    return Number(number.toString().replace(/[^0-9.-]+/g, ""))
+    return Number(number.replace(/[^0-9.-]+/g, ""))
 }
 
 function toInteger(number)
 {
-    // if (typeof number !== "string")
-    // {
-    //     number = number.toString()
-    // }
-    
+    if (typeof number !== "string")
+    {
+        number = number.toString()
+    }
+
     return Math.round(toDecimal(number))
-    // return toDecimal(number)
 }
 
 function tableDataToIntegers({

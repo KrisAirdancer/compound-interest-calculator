@@ -35,7 +35,7 @@ function App()
     let newPrincipal = toInteger(event.target['principal'].value)
     let newAnnualInvestment = toInteger(event.target['annualInvestment'].value)
     let newNumPeriods = toInteger(event.target['numPeriods'].value)
-    let newRate = toDecimal(event.target['rate'].value.toString())
+    let newRate = toDecimal(event.target['rate'].value)
 
     setTableData(() => {
       return {
