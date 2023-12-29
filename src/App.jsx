@@ -40,12 +40,14 @@ function App()
     let newPrincipal = toInteger(event.target['principal'].value)
     let newAnnualInvestment = toInteger(event.target['annualInvestment'].value)
     let newNumPeriods = toInteger(event.target['numPeriods'].value)
-    let newRate = toDecimal(event.target['rate'].value)
+    let newRate = toDecimal(event.target['rate'].value).toFixed(2)
 
     if (!validateDecimalInput(newPrincipal)) { newPrincipal = 0.0 }
     if (!validateDecimalInput(newAnnualInvestment)) { newAnnualInvestment = 0.0 }
     if (!validateIntegerInput(newNumPeriods)) { newNumPeriods = 1 }
     if (!validateDecimalInput(newRate)) { newRate = 0.0 }
+
+    console.log(newRate)
 
     setTableData(() => {
       return {
