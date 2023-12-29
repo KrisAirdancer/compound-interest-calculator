@@ -3,7 +3,7 @@ import './App.css'
 import Header from './Header'
 import UserInput from './UserInput'
 import Table from './Table'
-import { toDecimal, toInteger, formatAsCurrency } from './utils/calc'
+import { toDecimal, toInteger, formatAsCurrency, validateDollarsInput, validateRateInput, validateYearsInput } from './utils/calc'
 
 const DEFAULT_INVESTMENT = {
   principal: 10000,
@@ -36,6 +36,26 @@ function App()
     let newAnnualInvestment = toInteger(event.target['annualInvestment'].value)
     let newNumPeriods = toInteger(event.target['numPeriods'].value)
     let newRate = toDecimal(event.target['rate'].value)
+
+    if (!validateDollarsInput(newPrincipal))
+    {
+      newPrincipal = 0.0
+    }
+
+    if (!validateDollarsInput(newAnnualInvestment))
+    {
+      newAnnualInvestment = 0.0
+    }
+
+    if (!validateYearsInput(newNumPeriods))
+    {
+      newNumPeriods = 1
+    }
+
+    if (!validateRateInput(newRate))
+    {
+      newRate = 0.0
+    }
 
     setTableData(() => {
       return {

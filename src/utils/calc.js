@@ -106,11 +106,59 @@ function tableDataToIntegers({
     }
 }
 
+function validateDollarsInput(number)
+{
+    if (typeof number !== "string")
+    {
+        number = number.toString()
+    }
+
+    if (!toDecimal(number))
+    {
+        return false
+    }
+
+    return true
+}
+
+function validateYearsInput(number)
+{
+    if (typeof number !== "string")
+    {
+        number = number.toString()
+    }
+
+    if (!toInteger(number))
+    {
+        return false
+    }
+
+    return true
+}
+
+function validateRateInput(number)
+{
+    if (typeof number !== "string")
+    {
+        number = number.toString()
+    }
+
+    if (!toDecimal(number))
+    {
+        return false
+    }
+
+    return true
+}
+
 export {
     futureValue,
     calculateTableData,
     formatAsCurrency,
     toDecimal,
     toInteger,
-    tableDataToIntegers
+    tableDataToIntegers,
+    validateDollarsInput,
+    validateYearsInput,
+    validateRateInput
 }
