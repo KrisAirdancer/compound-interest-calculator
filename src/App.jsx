@@ -7,8 +7,8 @@ import Table from './Table'
 function App()
 {
   const [ userInput, setUserInput ] = useState({
-    principal: 15000,
-    annualInvestment: 900,
+    principal: 10000,
+    annualInvestment: 1200,
     rate: 5.5,
     numPeriods: 10
   })
