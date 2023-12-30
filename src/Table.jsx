@@ -7,7 +7,7 @@ export default function Table({ tableData })
         <div className="card p-2 mb-3 bg-secondary custom-shadow container-fluid" id='table'>
 
             <div className='border rounded-2 p-1 custom-shadow-2'>
-                <h1 className='text-center fs-5 custom-bold' id='siteTitle'>Future Value</h1>
+                <h1 className='text-center fs-5 custom-bold' id='future-value-header'>Future Value</h1>
                 <h2 className='fs-5 mb-0 text-center future-value'>${formatAsCurrency(futureValue(tableDataToIntegers(tableData)))}</h2>
             </div>
 

@@ -53,6 +53,10 @@ body {
   color: whitesmoke;
 }
 
+#future-value-header {
+  color: whitesmoke;
+}
+
 #bootstrap-override input:focus {
   border-color: rgb(173, 255, 47, 0.8);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(173, 255, 47, 0.6);
@@ -60,9 +64,23 @@ body {
   color: whitesmoke; /* TODO: This style should be elsewhere. */
 }
 
-@media (max-width: 576px) {
+@media (max-width: 567px) {
   #table {
     overflow-x: scroll;
     font-size: 10pt
+  }
+}
+
+@media (max-width: 375px) {
+  #table {
+    overflow-x: scroll;
+    font-size: 8pt
+  }
+}
+
+@media (max-width: 300px) {
+  #table {
+    overflow-x: scroll;
+    font-size: 6pt
   }
 }
